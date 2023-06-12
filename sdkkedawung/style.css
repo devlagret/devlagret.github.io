@@ -1,8 +1,8 @@
 :root {
   --text: #131b0d;
   --primary: #015cab;
-	--secondary: #346DFE:
-	--accent:#FEF200;
+	--secondary: #346DFE;
+	--accent: #FEF200;
 }
 .color-primary{
 color: var(--primary) !important;
@@ -18,6 +18,21 @@ background-color: var(--primary) !important;
 }
 .gallery-img {
 	max-width: 100%;
+}
+hr {
+  border-top: 2px dashed  black;
+}
+spacer{
+background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+background-position: bottom;
+background-size: 3px 1px;
+background-repeat: repeat-x;
+}
+.bordered{
+  border: 2px dashed gray);
+}
+.card-text{
+ color:  rgb(33, 37, 41);
 }
 /*.gallery {
   display: flex;
