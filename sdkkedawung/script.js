@@ -1,29 +1,25 @@
-window.onload = function() {
-document.getElementById("year").innerHTML = new Date().getFullYear();
-};
-//read photo from fir
-var fs = require('fs');
-var files = fs.readdirSync('/img/');
-console.log(files);
-
-//ligthbox
+//window.onload = function() {
+//document.getElementById("year").innerHTML = new Date().getFullYear();
+//};
 const imageGrid = document.querySelector(".image-grid");
 const links = imageGrid.querySelectorAll("a");
 const imgs = imageGrid.querySelectorAll("img");
 const lightboxModal = document.getElementById("lightbox-modal");
 const bsModal = new bootstrap.Modal(lightboxModal);
 const modalBody = document.querySelector(".modal-body .container-fluid");
-
+console.log(links);
 for (const link of links) {
   link.addEventListener("click", function (e) {
     e.preventDefault();
     const currentImg = link.querySelector("img");
     const lightboxCarousel = document.getElementById("lightboxCarousel");
+    console.log(lightboxCarousel);
     if (lightboxCarousel) {
       const parentCol = link.parentElement.parentElement;
       const index = [...parentCol.parentElement.children].indexOf(parentCol);
       const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
       bsCarousel.to(index);
+      console.log(index);
     } else {
       createCarousel(currentImg);
     }
@@ -58,12 +54,11 @@ function createSlides(img) {
   for (const img of imgs) {
     const imgSrc = img.getAttribute("src");
     const imgAlt = img.getAttribute("alt");
-    const imgCaption = img.getAttribute("data-caption");
+  
 
     markup += `
     <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
       <img src=${imgSrc} alt=${imgAlt}>
-      ${imgCaption ? createCaption(imgCaption) : ""}
     </div>
     `;
   }
