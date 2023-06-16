@@ -1,0 +1,14 @@
+/*.nav-container{
+	padding-right:3rem !important;
+	padding-left:3rem !important;
+}*/
+body{
+	 background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+background-position: center center;
+
+}
+main{
+	background-color: rgba(23, 23, 23, 0.5);
+}
