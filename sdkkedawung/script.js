@@ -1,6 +1,6 @@
-//window.onload = function() {
-//document.getElementById("year").innerHTML = new Date().getFullYear();
-//};
+window.onload = function() {
+document.getElementById("year").innerHTML = new Date().getFullYear();
+};
 const imageGrid = document.querySelector(".image-grid");
 const links = imageGrid.querySelectorAll("a");
 const imgs = imageGrid.querySelectorAll("img");
