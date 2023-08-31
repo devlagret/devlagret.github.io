@@ -11,7 +11,7 @@ background-position: center center;
 }
 main{
 	background-color: rgba(23, 23, 23, 0.5);
-	height: 86vh;
+	min-height: 86vh;
 }
 footer {
 	position: fixed;
