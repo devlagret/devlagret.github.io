@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "test-kartar",
+    "prod": "nikahanededi"
+  },
+  "targets": {},
+  "etags": {}
+}
