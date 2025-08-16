@@ -39,8 +39,8 @@ import {
 import * as motion from "motion/react-client";
 import type { Metadata } from "next";
 import Image from "next/image";
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import "photoswipe/style.css";
 import Gallery from "./gallery";
 // NOTE: This is a clean, modern replica starter inspired by kanisius.sch.id's typical structure
 // without copying any proprietary content. Swap placeholder texts/images with real assets.
@@ -55,14 +55,11 @@ const NavBar: React.FC = () => (
           alt="School logo"
           className="h-10 w-10 rounded-full object-cover"
         /> */}
-        <Image
-          src="/img/logo.png"
-          alt="School Logo"
-          width={40}
-          height={40}
-        />
+        <Image src="/img/logo.png" alt="School Logo" width={40} height={40} />
         <div className="leading-tight">
-          <div className="font-extrabold tracking-tight">SD Kanisius Kedawung</div>
+          <div className="font-extrabold tracking-tight">
+            SD Kanisius Kedawung
+          </div>
           <div className="text-xs text-muted-foreground">
             Faith • Excellence • Service
           </div>
@@ -122,8 +119,12 @@ const Hero: React.FC = () => (
     </div>
 
     <div className="mx-auto grid max-w-7xl gap-6 px-4 py-20 md:grid-cols-2 md:py-28 lg:py-36">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-      {/* <div> */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* <div> */}
         <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
           Mendidik dengan Hati,{" "}
           <span className="text-primary">Membentuk Masa Depan</span>
@@ -156,35 +157,50 @@ const Hero: React.FC = () => (
             Terakreditasi A
           </Badge>
         </div>
-      {/* </div> */}
+        {/* </div> */}
       </motion.div>
 
-      <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         <div className="grid gap-4 sm:grid-cols-2">
-          {[{
-            title: "Prestasi Siswa",
-            icon: <Star className="h-5 w-5" />, value: "120+",
-            desc: "Penghargaan akademik & non-akademik"
-          }, {
-            title: "Guru Berpengalaman",
-            icon: <Users2 className="h-5 w-5" />, value: "80+",
-            desc: "Pendidik berkompeten & peduli"
-          }, {
-            title: "Lulusan Unggul",
-            icon: <GraduationCap className="h-5 w-5" />, value: "98%",
-            desc: "Lulus ke jenjang favorit"
-          }, {
-            title: "Unit Pendidikan",
-            icon: <LibraryBig className="h-5 w-5" />, value: "TK sampai SD",
-            desc: "Rangkaian pendidikan berkelanjutan"
-          }].map((k, i) => (
+          {[
+            {
+              title: "Prestasi Siswa",
+              icon: <Star className="h-5 w-5" />,
+              value: "120+",
+              desc: "Penghargaan akademik & non-akademik",
+            },
+            {
+              title: "Guru Berpengalaman",
+              icon: <Users2 className="h-5 w-5" />,
+              value: "80+",
+              desc: "Pendidik berkompeten & peduli",
+            },
+            {
+              title: "Lulusan Unggul",
+              icon: <GraduationCap className="h-5 w-5" />,
+              value: "98%",
+              desc: "Lulus ke jenjang favorit",
+            },
+            {
+              title: "Unit Pendidikan",
+              icon: <LibraryBig className="h-5 w-5" />,
+              value: "TK sampai SD",
+              desc: "Rangkaian pendidikan berkelanjutan",
+            },
+          ].map((k, i) => (
             <Card key={i} className="rounded-2xl">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">{k.title}</CardTitle>
                 {k.icon}
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-extrabold tracking-tight">{k.value}</div>
+                <div className="text-3xl font-extrabold tracking-tight">
+                  {k.value}
+                </div>
                 <p className="mt-1 text-xs text-muted-foreground">{k.desc}</p>
               </CardContent>
             </Card>
@@ -221,8 +237,9 @@ const Profile: React.FC = () => (
           </CardHeader>
           <CardContent className="space-y-4 text-sm leading-relaxed">
             <p>
-              Sekolah Dasar Kanisius Kedawung berkomitmen pada pendidikan holistik yang
-              menumbuhkan kecerdasan intelektual, emosional, dan spiritual.
+              Sekolah Dasar Kanisius Kedawung berkomitmen pada pendidikan
+              holistik yang menumbuhkan kecerdasan intelektual, emosional, dan
+              spiritual.
             </p>
             <ul className="list-inside list-disc text-muted-foreground">
               <li>Menjadi komunitas belajar yang humanis dan inklusif.</li>
@@ -481,16 +498,21 @@ const Contact: React.FC = () => (
         <Card className="rounded-2xl">
           <CardContent className="space-y-3 p-6">
             <div className="flex items-center gap-2 text-sm">
-              <a href="https://maps.app.goo.gl/vz8bdysmayDEo4v68" target="_blank" rel="noopener noreferrer">
-              <MapPin className="h-4 w-4" />
-              Mojorejo, RT.11/RW.05, Mojorejo, Mojoroto, Kedawung, Kec. Jumapolo, Kabupaten Karanganyar, Jawa Tengah 57783
+              <a
+                href="https://maps.app.goo.gl/vz8bdysmayDEo4v68"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="h-4 w-4" />
+                Mojorejo, RT.11/RW.05, Mojorejo, Mojoroto, Kedawung, Kec.
+                Jumapolo, Kabupaten Karanganyar, Jawa Tengah 57783
               </a>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Phone className="h-4 w-4" /> 
+              <Phone className="h-4 w-4" />
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <Mail className="h-4 w-4" /> 
+              <Mail className="h-4 w-4" />
             </div>
             <div className="mt-2 flex gap-2">
               <Button variant="outline" size="icon" className="rounded-full">
@@ -505,7 +527,15 @@ const Contact: React.FC = () => (
             </div>
             <div className="mt-4 overflow-hidden rounded-2xl">
               {/* Map placeholder */}
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123304.379476924!2d111.03895515255573!3d-7.740484115216147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a26c44a573247%3A0x8343f9a5728758d!2sSD%20Kanisius%20Kedawung!5e0!3m2!1sen!2sid!4v1755370792551!5m2!1sen!2sid" width="600" height="300" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123304.379476924!2d111.03895515255573!3d-7.740484115216147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a26c44a573247%3A0x8343f9a5728758d!2sSD%20Kanisius%20Kedawung!5e0!3m2!1sen!2sid!4v1755370792551!5m2!1sen!2sid"
+                width="600"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </CardContent>
         </Card>
@@ -519,12 +549,7 @@ const Footer: React.FC = () => (
     <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:grid-cols-4">
       <div>
         <div className="flex items-center gap-3">
-          <Image
-            src="/img/logo.png"
-            alt="School Logo"
-            width={40}
-            height={40}
-          />
+          <Image src="/img/logo.png" alt="School Logo" width={40} height={40} />
           <div className="font-extrabold">Sekolah Dasar Kanisius Kedawung</div>
         </div>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -570,7 +595,9 @@ const Footer: React.FC = () => (
           <Button className="rounded-full">Kirim</Button>
         </div> */}
         <p className="text-xs text-muted-foreground">
-          Disclaimer: Website ini sedang dalam pengembangan. Data yang ditampilkan mungkin tidak akurat. Silakan hubungi kami jika menemukan kesalahan.
+          Disclaimer: Website ini sedang dalam pengembangan. Data yang
+          ditampilkan mungkin tidak akurat. Silakan hubungi kami jika menemukan
+          kesalahan.
         </p>
       </div>
     </div>
@@ -581,9 +608,19 @@ const Footer: React.FC = () => (
 );
 export const metadata: Metadata = {
   title: "SDK Kedawung",
+  verification: { google: "sZWPSBDrpwGLBNR6Yw1xUWN_YqGl8sKajjE-rFgDh5g" },
   icons: "/img/logo.png",
-  description: "Mengembangkan kepemimpinan yang berlandaskan nilai Kristiani | Profil SDK Kedawung",
-  keywords: ["gallery sdk kedawung","sdk kedawung",  "SDK Kedawung", "school", "sdk","SD Kanisius", "sd kanisius kedawung"],
+  description:
+    "Mengembangkan kepemimpinan yang berlandaskan nilai Kristiani | Profil SDK Kedawung",
+  keywords: [
+    "gallery sdk kedawung",
+    "sdk kedawung",
+    "SDK Kedawung",
+    "school",
+    "sdk",
+    "SD Kanisius",
+    "sd kanisius kedawung",
+  ],
   openGraph: {
     url: "https://devlagret.github.io/sdk",
     images: [
@@ -599,13 +636,18 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SDK Kedawung",
-    description: "Mengembangkan kepemimpinan yang berlandaskan nilai Kristiani | Profil SDK Kedawung",
+    description:
+      "Mengembangkan kepemimpinan yang berlandaskan nilai Kristiani | Profil SDK Kedawung",
     images: ["/img/logo.png"],
   },
 };
 export default function KanisiusReplica() {
   return (
-    <main className="min-h-screen bg-background text-foreground" itemScope itemType="http://schema.org/WebPage">
+    <main
+      className="min-h-screen bg-background text-foreground"
+      itemScope
+      itemType="http://schema.org/WebPage"
+    >
       <NavBar />
       <motion.div animate={{ opacity: 1 }} />
 
