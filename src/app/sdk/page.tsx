@@ -149,7 +149,7 @@ const Hero: React.FC = () => (
           <Badge variant="secondary" className="rounded-full">
             Sekolah Katolik
           </Badge>
-          <Badge variant="outline" className="rounded-full">
+          <Badge variant="outline" className="text-white rounded-full">
             Terakreditasi A
           </Badge>
         </div>
