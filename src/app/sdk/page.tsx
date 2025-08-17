@@ -50,11 +50,6 @@ const NavBar: React.FC = () => (
   <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
     <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4">
       <div className="flex items-center gap-3">
-        {/* <img
-          src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=256&auto=format&fit=crop"
-          alt="School logo"
-          className="h-10 w-10 rounded-full object-cover"
-        /> */}
         <Image src="/img/logo.png" alt="School Logo" width={40} height={40} />
         <div className="leading-tight">
           <div className="font-extrabold tracking-tight">
@@ -110,12 +105,13 @@ const NavBar: React.FC = () => (
 const Hero: React.FC = () => (
   <section id="beranda" className="relative">
     <div className="absolute inset-0 -z-10">
-      <img
-        src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop"
-        alt="Campus hero"
+      <Image
+        src="/hero.png"
+        fill
+        alt="School hero"
         className="h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/50 to-transparent" />
     </div>
 
     <div className="mx-auto grid max-w-7xl gap-6 px-4 py-20 md:grid-cols-2 md:py-28 lg:py-36">
@@ -127,7 +123,7 @@ const Hero: React.FC = () => (
         {/* <div> */}
         <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
           Mendidik dengan Hati,{" "}
-          <span className="text-primary">Membentuk Masa Depan</span>
+          <span className="text-slate-200">Membentuk Masa Depan</span>
         </h1>
         <p className="mt-4 max-w-xl text-white/90">
           Lingkungan belajar yang menumbuhkan iman, karakter, dan prestasi
@@ -265,11 +261,18 @@ const Profile: React.FC = () => (
           </CardContent>
         </Card>
 
-        <Card className="overflow-hidden rounded-2xl">
-          <img
+        <Card className="overflow-hidden h-80 p-0 rounded-2xl">
+          {/* <img
             src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop"
             alt="School building"
             className="h-64 w-full object-cover md:h-full"
+          /> */}
+          <Image 
+            src="/visimisi.jpg"
+            width={700}
+            height={500}
+            alt="School building"
+            className="object-covermd:h-full"
           />
         </Card>
       </div>
@@ -291,7 +294,7 @@ const NewsAndAnnouncements: React.FC = () => (
               <Card key={i} className="group overflow-hidden rounded-2xl">
                 <div className="relative">
                   <img
-                    src={`https://picsum.photos/seed/kan-${i}/800/500`}
+                    src='/img/logo.png'
                     alt={`Berita ${i}`}
                     className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
@@ -382,7 +385,7 @@ const ProgramsTabs: React.FC = () => (
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="rounded-2xl">
+              <Card className="rounded-2xl p-0">
                 <Image
                   src={`/img/program/${k}.jpg`}
                   alt={`Fasilitas ${k}`}
@@ -448,7 +451,7 @@ const FAQ: React.FC = () => (
       <Accordion
         type="single"
         collapsible
-        className="rounded-2xl bg-background p-2"
+        className="rounded-2xl p-2"
       >
         {[
           {
@@ -607,6 +610,7 @@ const Footer: React.FC = () => (
   </footer>
 );
 export const metadata: Metadata = {
+  metadataBase: new URL('https://devlagret.github.io'),
   title: "SDK Kedawung",
   verification: { google: "sZWPSBDrpwGLBNR6Yw1xUWN_YqGl8sKajjE-rFgDh5g" },
   icons: "/img/logo.png",
@@ -644,7 +648,7 @@ export const metadata: Metadata = {
 export default function KanisiusReplica() {
   return (
     <main
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen text-foreground"
       itemScope
       itemType="http://schema.org/WebPage"
     >
