@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, DocumentData } from "firebase/firestore";
 import app from "@/lib/firebase";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,7 @@ import { Newspaper } from "lucide-react";
 import Image from "next/image";
 
 export default function NewsAndAnnouncements() {
-  const [announcements, setDocs] = useState<any[]>([]);
+  const [announcements, setDocs] = useState<DocumentData[]>([]);
 
   const SectionTitle: React.FC<{ title: string; subtitle?: string }> = ({
     title,
@@ -40,12 +40,12 @@ export default function NewsAndAnnouncements() {
               subtitle="Aktivitas, prestasi, dan agenda sekolah."
             />
             <div className="grid gap-4 sm:grid-cols-2">
-              {announcements.map((i) => (
-              <Card key={i} className="group overflow-hidden rounded-2xl">
+              {announcements.map((data, idx) => (
+              <Card key={idx} className="group overflow-hidden rounded-2xl">
                 <div className="relative">
                   <Image
-                    src={i.image || ""}
-                    alt={`Berita ${i.title}`}
+                    src={data.image || ""}
+                    alt={`Berita ${data.title}`}
                     className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
                   <Badge
@@ -53,16 +53,16 @@ export default function NewsAndAnnouncements() {
                     variant="secondary"
                   >
                     <Newspaper className="mr-1 h-3 w-3" />
-                    {i.type || "Berita"}
+                    {data.type || "Berita"}
                   </Badge>
                 </div>
                 <CardHeader className="pb-2">
                   <CardTitle className="line-clamp-2">
-                    {i.title || "Judul Berita"}
+                    {data.title || "Judul Berita"}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm text-muted-foreground">
-                  Ringkasan: {i.summary || "Ringkasan Berita"}
+                  Ringkasan: {data.summary || "Ringkasan Berita"}
                 </CardContent>
               </Card>
             ))}
