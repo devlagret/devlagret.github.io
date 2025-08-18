@@ -42,6 +42,7 @@ import Image from "next/image";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import Gallery from "./gallery";
+import NewsAndAnnouncements from "./newsAndAnnouncements";
 // NOTE: This is a clean, modern replica starter inspired by kanisius.sch.id's typical structure
 // without copying any proprietary content. Swap placeholder texts/images with real assets.
 // Tailwind is assumed available. All components live in one file for easy preview.
@@ -280,80 +281,6 @@ const Profile: React.FC = () => (
   </section>
 );
 
-const NewsAndAnnouncements: React.FC = () => (
-  <section id="berita" className="py-14 md:py-20">
-    <div className="mx-auto max-w-7xl px-4">
-      <div className="grid gap-10 lg:grid-cols-3">
-        <div className="lg:col-span-2">
-          <SectionTitle
-            title="Berita Terbaru"
-            subtitle="Aktivitas, prestasi, dan agenda sekolah."
-          />
-          <div className="grid gap-4 sm:grid-cols-2">
-            {/* {[1].map((i) => (
-              <Card key={i} className="group overflow-hidden rounded-2xl">
-                <div className="relative">
-                  <img
-                    src='/img/logo.png'
-                    alt={`Berita ${i}`}
-                    className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                  <Badge
-                    className="absolute left-3 top-3 rounded-full"
-                    variant="secondary"
-                  >
-                    <Newspaper className="mr-1 h-3 w-3" />
-                    Berita
-                  </Badge>
-                </div>
-                <CardHeader className="pb-2">
-                  <CardTitle className="line-clamp-2">
-                    Berita  #{i}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  Rinkasan
-                </CardContent>
-              </Card>
-            ))} */}
-          </div>
-          <div className="mt-4 text-right">
-            <Button variant="outline" className="rounded-full">
-              Lihat Semua Berita
-            </Button>
-          </div>
-        </div>
-
-        <div>
-          <SectionTitle
-            title="Pengumuman"
-            subtitle="Informasi penting untuk siswa & orang tua."
-          />
-          <div className="space-y-3">
-            {/* {[1].map((i) => (
-              <Card key={i} className="rounded-2xl">
-                <CardContent className="flex items-start gap-3 p-4">
-                  <BellRing className="mt-0.5 h-5 w-5" />
-                  <div>
-                    <div className="font-medium">Pengumuman #{i}</div>
-                    <div className="text-xs text-muted-foreground">
-                      12 Agustus 2025
-                    </div>
-                    <p className="mt-1 text-sm">
-                      Detail singkat pengumuman terkait akademik atau kegiatan
-                      sekolah.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))} */}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
-
 const ProgramsTabs: React.FC = () => (
   <section id="akademik" className="bg-muted/30 py-14 md:py-20">
     <div className="mx-auto max-w-7xl px-4">
@@ -522,10 +449,14 @@ const Contact: React.FC = () => (
                 <Facebook className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="icon" className="rounded-full">
-                <Instagram className="h-4 w-4" />
+                <a href="https://www.instagram.com/tk_sd_kanisius_kedawung" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-4 w-4" />
+                </a>
               </Button>
               <Button variant="outline" size="icon" className="rounded-full">
-                <Youtube className="h-4 w-4" />
+                <a href="https://www.youtube.com/@sdkkedawung9872" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-4 w-4" />
+                </a>
               </Button>
             </div>
             <div className="mt-4 overflow-hidden rounded-2xl">
